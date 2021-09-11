@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.curso.dsvendas.Entitites.Sale;
 import com.curso.dsvendas.dto.SaleDTO;
+import com.curso.dsvendas.dto.SaleSuccessDTO;
 import com.curso.dsvendas.dto.SaleSumDTO;
 import com.curso.dsvendas.repositories.SaleRepository;
 import com.curso.dsvendas.repositories.SellerRepository;
@@ -33,5 +34,10 @@ public class SaleService {
 	@Transactional(readOnly = true)
 	public List<SaleSumDTO> amountGroupBySeller() {
 		return repository.amountGroupBySeller();
+	}
+	
+	@Transactional(readOnly = true)
+	public List<SaleSuccessDTO> successGroupBySeller() {
+		return repository.successGroupBySeller();
 	}
 }
